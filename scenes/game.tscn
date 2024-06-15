@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://xyrkqqfdqgkd"]
+[gd_scene load_steps=13 format=3 uid="uid://xyrkqqfdqgkd"]
 
 [ext_resource type="PackedScene" uid="uid://c3of3o385kuuc" path="res://scenes/player.tscn" id="1_0xbpn"]
 [ext_resource type="Texture2D" uid="uid://dhakcsy78ahji" path="res://assets/sprites/world_tileset.png" id="2_7yn6j"]
 [ext_resource type="PackedScene" uid="uid://b5jhtho5vbre4" path="res://scenes/platform.tscn" id="3_2uqr3"]
+[ext_resource type="PackedScene" uid="uid://dlnds1l3tnscm" path="res://scenes/coin.tscn" id="4_u72gp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e57kc"]
 texture = ExtResource("2_7yn6j")
@@ -447,7 +448,7 @@ _data = {
 
 [sub_resource type="Animation" id="Animation_dv60h"]
 resource_name = "moving_platform_vertical"
-length = 2.5
+length = 3.0
 loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -488,6 +489,7 @@ _data = {
 [node name="Player" parent="." instance=ExtResource("1_0xbpn")]
 z_index = 5
 position = Vector2(1, -2)
+collision_layer = 2
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(0, 1)
@@ -519,3 +521,27 @@ autoplay = "moving_platform_vertical"
 libraries = {
 "": SubResource("AnimationLibrary_ed4s8")
 }
+
+[node name="Area2D" parent="." instance=ExtResource("4_u72gp")]
+position = Vector2(184, 71)
+
+[node name="Area2D2" parent="." instance=ExtResource("4_u72gp")]
+position = Vector2(342, 71)
+
+[node name="Area2D3" parent="." instance=ExtResource("4_u72gp")]
+position = Vector2(456, 71)
+
+[node name="Area2D4" parent="." instance=ExtResource("4_u72gp")]
+position = Vector2(559, 68)
+
+[node name="Area2D5" parent="." instance=ExtResource("4_u72gp")]
+position = Vector2(554, -107)
+
+[node name="Area2D6" parent="." instance=ExtResource("4_u72gp")]
+position = Vector2(375, -106)
+
+[node name="Area2D7" parent="." instance=ExtResource("4_u72gp")]
+position = Vector2(235, -105)
+
+[node name="Area2D8" parent="." instance=ExtResource("4_u72gp")]
+position = Vector2(26, -50)
